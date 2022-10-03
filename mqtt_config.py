@@ -1,5 +1,5 @@
 # MQTT defenitions
 mqtt_broker = 'broker.hivemq.com'
-pumpName = 'DH_dda001'
-Location = 'DigitalHub'
+pumpName = 'Ch_dda003'
+Location = 'Chennai'
 domain = 'buckman/ackumen/smartAssets/'
