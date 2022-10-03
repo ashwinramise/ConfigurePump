@@ -28,7 +28,6 @@ def readReg(register):
         print(e)
 
 
-
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
         print("Connected to MQTT Broker!")
@@ -54,9 +53,8 @@ def on_message(client, userdata, msg):
     command = json.loads(x)
     print(f"Recieved write command {command}")
     if 'bit' in command.keys():
-        writeReg(command['register'][0], command['bit'][0])
-        writeReg(command['register'][1], command['bit'][1])
-        writeReg(command['register'][2], command['bit'][2])
+        for i in range(len(command['register'])):
+            writeReg(command['register'][i], command['bit'][i])
     else:
         requested = {}
         for reg in command['register']:
